@@ -11,4 +11,6 @@ struct User {
     var username: String = ""
     var password: String = ""
     var email: String = ""
+    
+    var isSecured: Bool = true
 }

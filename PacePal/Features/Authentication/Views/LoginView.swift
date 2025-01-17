@@ -38,15 +38,31 @@ struct LoginView: View {
                 }
                 .customTextFieldShape(color: .gray.opacity(0.11))
                 
-                VStack (alignment: .leading) {
-                    Text("Password")
-                        .opacity(0.4)
-                    TextField("", text: $user.password)
+                HStack {
+                    VStack (alignment: .leading) {
+                        Text("Password")
+                            .opacity(0.4)
+                        
+                        if user.isSecured {
+                            SecureField("", text: $user.password)
+                        } else {
+                            TextField("", text: $user.password)
+                        }
+                    }
+                    
+                    Button(action: {
+                        user.isSecured.toggle()
+                    }) {
+                        Image(systemName: user.isSecured ? "eye.slash" : "eye")
+                            .accentColor(.gray)
+                    }
                 }
                 .customTextFieldShape(color: .gray.opacity(0.11))
             }
             .padding(.horizontal, 30)
             .padding(.bottom, 25)
+            .textInputAutocapitalization(.never)
+            .autocorrectionDisabled(true)
             
             Text("LOGIN")
                 .customTextFieldShape(color: Color(hex: 0x53A57D))
