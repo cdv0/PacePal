@@ -34,7 +34,7 @@ struct LoginView: View {
                 VStack (alignment: .leading) {
                     Text("Email")
                         .opacity(0.4)
-                    TextField("", text: $user.username)
+                    TextField("", text: $user.email)
                 }
                 .customTextFieldShape(color: .gray.opacity(0.11))
                 
