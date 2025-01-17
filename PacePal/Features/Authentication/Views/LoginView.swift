@@ -27,7 +27,8 @@ struct LoginView: View {
             Text("Track your steps")
                 .font(.system(size: 14))
                 .opacity(0.5)
-                .padding(.bottom, 40)
+            
+            Spacer()
             
             VStack(spacing: 15) {
                 VStack (alignment: .leading) {
