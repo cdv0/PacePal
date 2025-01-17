@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8B682B0F2D3AF6C100A5AC34 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B682B0E2D3AF6C100A5AC34 /* LoginView.swift */; };
+		8B682B112D3AF74400A5AC34 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B682B102D3AF74400A5AC34 /* User.swift */; };
+		8B682B192D3B01B000A5AC34 /* LoginPageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B682B182D3B01B000A5AC34 /* LoginPageExtensions.swift */; };
+		8B682B1B2D3B05E500A5AC34 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B682B1A2D3B05E500A5AC34 /* ColorExtension.swift */; };
 		8B6AF1042D348F3A00BB31B9 /* PacePalApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6AF1032D348F3A00BB31B9 /* PacePalApp.swift */; };
 		8B6AF1062D348F3A00BB31B9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6AF1052D348F3A00BB31B9 /* ContentView.swift */; };
 		8B6AF1082D348F3B00BB31B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B6AF1072D348F3B00BB31B9 /* Assets.xcassets */; };
@@ -14,6 +18,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8B682B0E2D3AF6C100A5AC34 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		8B682B102D3AF74400A5AC34 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		8B682B182D3B01B000A5AC34 /* LoginPageExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPageExtensions.swift; sourceTree = "<group>"; };
+		8B682B1A2D3B05E500A5AC34 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		8B6AF1002D348F3A00BB31B9 /* PacePal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PacePal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B6AF1032D348F3A00BB31B9 /* PacePalApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PacePalApp.swift; sourceTree = "<group>"; };
 		8B6AF1052D348F3A00BB31B9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -32,6 +40,64 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8B682B092D3AF41D00A5AC34 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				8B682B0A2D3AF42500A5AC34 /* Authentication */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		8B682B0A2D3AF42500A5AC34 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				8B682B0D2D3AF4C000A5AC34 /* ViewModels */,
+				8B682B0C2D3AF4B700A5AC34 /* Views */,
+				8B682B0B2D3AF4AF00A5AC34 /* Models */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		8B682B0B2D3AF4AF00A5AC34 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				8B682B102D3AF74400A5AC34 /* User.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		8B682B0C2D3AF4B700A5AC34 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8B682B0E2D3AF6C100A5AC34 /* LoginView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		8B682B0D2D3AF4C000A5AC34 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		8B682B162D3B014700A5AC34 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				8B682B172D3B014E00A5AC34 /* Extensions */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		8B682B172D3B014E00A5AC34 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				8B682B182D3B01B000A5AC34 /* LoginPageExtensions.swift */,
+				8B682B1A2D3B05E500A5AC34 /* ColorExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		8B6AF0F72D348F3A00BB31B9 = {
 			isa = PBXGroup;
 			children = (
@@ -51,6 +117,8 @@
 		8B6AF1022D348F3A00BB31B9 /* PacePal */ = {
 			isa = PBXGroup;
 			children = (
+				8B682B162D3B014700A5AC34 /* Utilities */,
+				8B682B092D3AF41D00A5AC34 /* Features */,
 				8B6AF1032D348F3A00BB31B9 /* PacePalApp.swift */,
 				8B6AF1052D348F3A00BB31B9 /* ContentView.swift */,
 				8B6AF1072D348F3B00BB31B9 /* Assets.xcassets */,
@@ -137,7 +205,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B682B112D3AF74400A5AC34 /* User.swift in Sources */,
+				8B682B0F2D3AF6C100A5AC34 /* LoginView.swift in Sources */,
 				8B6AF1062D348F3A00BB31B9 /* ContentView.swift in Sources */,
+				8B682B1B2D3B05E500A5AC34 /* ColorExtension.swift in Sources */,
+				8B682B192D3B01B000A5AC34 /* LoginPageExtensions.swift in Sources */,
 				8B6AF1042D348F3A00BB31B9 /* PacePalApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
