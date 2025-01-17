@@ -19,9 +19,11 @@ struct LoginView: View {
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 350, height: 100)
+            
             Text("Welcome to PacePal!")
                 .font(.title2.bold())
                 .padding(.bottom, 3)
+            
             Text("Track your steps")
                 .font(.system(size: 14))
                 .opacity(0.5)
