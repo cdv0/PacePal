@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct LoginView: View {
-    @State private var user = User()
+    @State private var viewModel = LoginViewModel()
     
     var body: some View {
         VStack {
@@ -34,7 +34,7 @@ struct LoginView: View {
                 VStack (alignment: .leading) {
                     Text("Email")
                         .opacity(0.4)
-                    TextField("", text: $user.email)
+                    TextField("", text: $viewModel.user.email)
                 }
                 .customTextFieldShape(color: .gray.opacity(0.11))
                 
@@ -43,17 +43,17 @@ struct LoginView: View {
                         Text("Password")
                             .opacity(0.4)
                         
-                        if user.isSecured {
-                            SecureField("", text: $user.password)
+                        if viewModel.isSecured {
+                            SecureField("", text: $viewModel.user.password)
                         } else {
-                            TextField("", text: $user.password)
+                            TextField("", text: $viewModel.user.password)
                         }
                     }
                     
                     Button(action: {
-                        user.isSecured.toggle()
+                        viewModel.isSecured.toggle()
                     }) {
-                        Image(systemName: user.isSecured ? "eye.slash" : "eye")
+                        Image(systemName: viewModel.isSecured ? "eye.slash" : "eye")
                             .accentColor(.gray)
                     }
                 }
