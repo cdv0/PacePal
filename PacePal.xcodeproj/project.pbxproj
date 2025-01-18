@@ -14,6 +14,8 @@
 		8B682B1D2D3B12F000A5AC34 /* ForgotPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B682B1C2D3B12F000A5AC34 /* ForgotPasswordView.swift */; };
 		8B682B1F2D3B205200A5AC34 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B682B1E2D3B205200A5AC34 /* LoginViewModel.swift */; };
 		8B682B212D3B205F00A5AC34 /* SignupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B682B202D3B205F00A5AC34 /* SignupViewModel.swift */; };
+		8B682B232D3B32BB00A5AC34 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8B682B222D3B32BB00A5AC34 /* GoogleService-Info.plist */; };
+		8B682B262D3B341B00A5AC34 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 8B682B252D3B341B00A5AC34 /* FirebaseAnalytics */; };
 		8B6AF1042D348F3A00BB31B9 /* PacePalApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6AF1032D348F3A00BB31B9 /* PacePalApp.swift */; };
 		8B6AF1062D348F3A00BB31B9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6AF1052D348F3A00BB31B9 /* ContentView.swift */; };
 		8B6AF1082D348F3B00BB31B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B6AF1072D348F3B00BB31B9 /* Assets.xcassets */; };
@@ -28,6 +30,7 @@
 		8B682B1C2D3B12F000A5AC34 /* ForgotPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordView.swift; sourceTree = "<group>"; };
 		8B682B1E2D3B205200A5AC34 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		8B682B202D3B205F00A5AC34 /* SignupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewModel.swift; sourceTree = "<group>"; };
+		8B682B222D3B32BB00A5AC34 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8B6AF1002D348F3A00BB31B9 /* PacePal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PacePal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B6AF1032D348F3A00BB31B9 /* PacePalApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PacePalApp.swift; sourceTree = "<group>"; };
 		8B6AF1052D348F3A00BB31B9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -40,6 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B682B262D3B341B00A5AC34 /* FirebaseAnalytics in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -129,6 +133,7 @@
 				8B682B162D3B014700A5AC34 /* Utilities */,
 				8B682B092D3AF41D00A5AC34 /* Features */,
 				8B6AF1032D348F3A00BB31B9 /* PacePalApp.swift */,
+				8B682B222D3B32BB00A5AC34 /* GoogleService-Info.plist */,
 				8B6AF1052D348F3A00BB31B9 /* ContentView.swift */,
 				8B6AF1072D348F3B00BB31B9 /* Assets.xcassets */,
 				8B6AF1092D348F3B00BB31B9 /* Preview Content */,
@@ -160,6 +165,9 @@
 			dependencies = (
 			);
 			name = PacePal;
+			packageProductDependencies = (
+				8B682B252D3B341B00A5AC34 /* FirebaseAnalytics */,
+			);
 			productName = PacePal;
 			productReference = 8B6AF1002D348F3A00BB31B9 /* PacePal.app */;
 			productType = "com.apple.product-type.application";
@@ -188,6 +196,9 @@
 				Base,
 			);
 			mainGroup = 8B6AF0F72D348F3A00BB31B9;
+			packageReferences = (
+				8B682B242D3B341B00A5AC34 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = 8B6AF1012D348F3A00BB31B9 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -204,6 +215,7 @@
 			files = (
 				8B6AF10B2D348F3B00BB31B9 /* Preview Assets.xcassets in Resources */,
 				8B6AF1082D348F3B00BB31B9 /* Assets.xcassets in Resources */,
+				8B682B232D3B32BB00A5AC34 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -428,6 +440,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		8B682B242D3B341B00A5AC34 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 11.7.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		8B682B252D3B341B00A5AC34 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8B682B242D3B341B00A5AC34 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 8B6AF0F82D348F3A00BB31B9 /* Project object */;
 }
