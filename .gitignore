@@ -1,3 +1,13 @@
-# Ignore Google Firebase config file
-GoogleService-Info.plist
+# Ignore SwiftPM folder
+swiftpm/
 
+# Ignore user-specific Xcode scheme management
+*.xcschememanagement.plist
+
+# General macOS and Xcode ignores
+.DS_Store
+xcuserdata/
+DerivedData/
+
+# Ignore Firebase config if used
+GoogleService-Info.plist
