@@ -14,6 +14,7 @@ struct LoginView: View {
         VStack {
             Spacer()
             Spacer()
+            Spacer()
             
             Image("PacePalLogo")
                 .resizable()
@@ -64,10 +65,14 @@ struct LoginView: View {
             .textInputAutocapitalization(.never)
             .autocorrectionDisabled(true)
             
-            Text("LOGIN")
+            Button(action: { viewModel.loginPressed()
+            }) {
+                Text("LOGIN")
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)  // Button fills the cutom shape
+                    .bold()
+                    .foregroundStyle(.white)
+            }
                 .customTextFieldShape(color: Color(hex: 0x53A57D))
-                .bold()
-                .foregroundStyle(.white)
             
             NavigationLink(destination: ForgotPasswordView()) {
                 Text("Forgot password?")
