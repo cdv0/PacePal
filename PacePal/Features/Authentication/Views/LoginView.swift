@@ -12,8 +12,7 @@ struct LoginView: View {
     @State private var password = ""
     
     @State private var isSecured = false
-    
-    @Environment(AuthViewModel.self) private var authViewModel
+    @EnvironmentObject private var authViewModel: AuthViewModel
 
     var body: some View {
         NavigationStack {
@@ -122,5 +121,5 @@ struct LoginView: View {
 
 #Preview {
     LoginView()
-        .environment(AuthViewModel())
+        .environmentObject(AuthViewModel())
 }

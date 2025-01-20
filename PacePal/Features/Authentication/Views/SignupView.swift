@@ -12,8 +12,7 @@ struct SignupView: View {
     @State private var fullName = ""
     @State private var password = ""
     @State private var confirmPassword = ""
-    
-    @Environment(AuthViewModel.self) private var authViewModel
+    @EnvironmentObject private var authViewModel: AuthViewModel
     
     var body: some View {
         VStack (spacing: 15) {
@@ -88,5 +87,5 @@ struct SignupView: View {
 
 #Preview {
     SignupView()
-        .environment(AuthViewModel())
+        .environmentObject(AuthViewModel())
 }
