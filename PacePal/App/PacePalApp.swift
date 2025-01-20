@@ -16,8 +16,8 @@ struct PacePalApp: App {
     
     var body: some Scene {
         WindowGroup {
-            LoginView()
-                .environment(authViewModel)
+            ContentView()
+            .environment(authViewModel)
         }
     }
 }
