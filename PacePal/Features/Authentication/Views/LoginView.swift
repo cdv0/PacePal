@@ -11,93 +11,103 @@ struct LoginView: View {
     @State private var viewModel = LoginViewModel()
     
     var body: some View {
-        VStack {
-            Spacer()
-            Spacer()
-            Spacer()
-            
-            Image("PacePalLogo")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(width: 350, height: 100)
-            
-            Text("Welcome to PacePal!")
-                .font(.title2.bold())
-                .padding(.bottom, 3)
-            
-            Text("Track your steps")
-                .font(.system(size: 14))
-                .opacity(0.5)
-            
-            Spacer()
-            
-            VStack(spacing: 15) {
-                VStack (alignment: .leading) {
-                    Text("Email")
-                        .opacity(0.4)
-                    TextField("", text: $viewModel.user.email)
-                }
-                .customTextFieldShape(color: .gray.opacity(0.11))
+        NavigationStack {
+            VStack {
+                Spacer()
+                Spacer()
+                Spacer()
                 
-                HStack {
+                Image("PacePalLogo")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 350, height: 100)
+                
+                Text("Welcome to PacePal!")
+                    .font(.title2.bold())
+                    .padding(.bottom, 3)
+                
+                Text("Track your steps")
+                    .font(.system(size: 14))
+                    .opacity(0.5)
+                
+                Spacer()
+                
+                VStack(spacing: 15) {
                     VStack (alignment: .leading) {
-                        Text("Password")
+                        Text("Email")
                             .opacity(0.4)
+                        TextField("", text: $viewModel.user.email)
+                    }
+                    .customTextFieldShape(color: .gray.opacity(0.11))
+                    
+                    HStack {
+                        VStack (alignment: .leading) {
+                            Text("Password")
+                                .opacity(0.4)
+                            
+                            if viewModel.isSecured {
+                                SecureField("", text: $viewModel.user.password)
+                            } else {
+                                TextField("", text: $viewModel.user.password)
+                            }
+                        }
                         
-                        if viewModel.isSecured {
-                            SecureField("", text: $viewModel.user.password)
-                        } else {
-                            TextField("", text: $viewModel.user.password)
+                        Button(action: {
+                            viewModel.isSecured.toggle()
+                        }) {
+                            Image(systemName: viewModel.isSecured ? "eye.slash" : "eye")
+                                .accentColor(.gray)
                         }
                     }
-                    
-                    Button(action: {
-                        viewModel.isSecured.toggle()
-                    }) {
-                        Image(systemName: viewModel.isSecured ? "eye.slash" : "eye")
-                            .accentColor(.gray)
+                    .customTextFieldShape(color: .gray.opacity(0.11))
+                }
+                .padding(.horizontal, 30)
+                .padding(.bottom, 25)
+                .textInputAutocapitalization(.never)
+                .autocorrectionDisabled(true)
+                
+                Button(action: { viewModel.loginPressed()
+                }) {
+                    Text("LOGIN")
+                        .frame(maxWidth: .infinity, maxHeight: .infinity)  // Button fills the cutom shape
+                        .bold()
+                        .foregroundStyle(.white)
+                }
+                .customTextFieldShape(color: Color(hex: 0x53A57D))
+                
+                NavigationLink(destination: ForgotPasswordView()) {
+                    Text("Forgot password?")
+                }
+                .padding(10)
+                .foregroundStyle(Color(hex: 0x53A57D))
+                .font(.system(size: 15))
+                .bold()
+                
+                Spacer()
+                Spacer()
+                
+                NavigationLink {
+                    SignupView()
+                        .navigationBarBackButtonHidden()
+                } label: {
+                    HStack (spacing: 3) {
+                        Text("Don't have an account?")
+                            .foregroundStyle(.black.opacity(0.7))
+                        Text("Register here!")
+                            .fontWeight(.bold)
+                            .foregroundStyle(Color(hex: 0x53A57D))
                     }
                 }
-                .customTextFieldShape(color: .gray.opacity(0.11))
+                .font(.system(size: 15))
+                .fontWeight(.medium)
+                
+                Spacer()
             }
-            .padding(.horizontal, 30)
-            .padding(.bottom, 25)
-            .textInputAutocapitalization(.never)
-            .autocorrectionDisabled(true)
-            
-            Button(action: { viewModel.loginPressed()
-            }) {
-                Text("LOGIN")
-                    .frame(maxWidth: .infinity, maxHeight: .infinity)  // Button fills the cutom shape
-                    .bold()
-                    .foregroundStyle(.white)
-            }
-                .customTextFieldShape(color: Color(hex: 0x53A57D))
-            
-            NavigationLink(destination: ForgotPasswordView()) {
-                Text("Forgot password?")
-            }
-            .padding(10)
-            .foregroundStyle(Color(hex: 0x53A57D))
-            .font(.system(size: 15))
-            .bold()
-            
-            Spacer()
-            Spacer()
-            
-            Group {
-                Text("Don't have an account? ")
-                + Text("Register!")
-            }
-            .font(.system(size: 15))
-            .fontWeight(.medium)
-            
-            Spacer()
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .background(Color(hex: 0xFBF7F4))
+            .ignoresSafeArea()
+            .preferredColorScheme(.light)
         }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(Color(hex: 0xFBF7F4))
-        .ignoresSafeArea()
-        .preferredColorScheme(.light)
     }
 }
 
