@@ -12,6 +12,7 @@ struct SignupView: View {
     @State private var fullName = ""
     @State private var password = ""
     @State private var confirmPassword = ""
+    @Environment(\.dismiss) var dismiss
     @EnvironmentObject private var authViewModel: AuthViewModel
     
     var body: some View {
@@ -86,7 +87,8 @@ struct SignupView: View {
                         .foregroundStyle(.black.opacity(0.7))
                     Text("Sign in")
                         .fontWeight(.bold)
-                        .foregroundStyle(Color(hex: 0x53A57D))                }
+                        .foregroundStyle(Color(hex: 0x53A57D))
+                }
             }
             .font(.system(size: 15))
             .fontWeight(.medium)
@@ -94,7 +96,6 @@ struct SignupView: View {
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color(hex: 0xFBF7F4))
         .ignoresSafeArea()
-        .preferredColorScheme(.light)
     }
 }
 
