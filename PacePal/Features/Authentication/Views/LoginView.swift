@@ -8,8 +8,13 @@
 import SwiftUI
 
 struct LoginView: View {
-    @State private var viewModel = LoginViewModel()
+    @State private var email = ""
+    @State private var password = ""
     
+    @State private var isSecured = false
+    
+    @Environment(AuthViewModel.self) private var authViewModel
+
     var body: some View {
         NavigationStack {
             VStack {
@@ -36,7 +41,7 @@ struct LoginView: View {
                     VStack (alignment: .leading) {
                         Text("Email")
                             .opacity(0.4)
-                        TextField("", text: $viewModel.user.email)
+                        TextField("", text: $email)
                     }
                     .customTextFieldShape(color: .gray.opacity(0.11))
                     
@@ -45,17 +50,17 @@ struct LoginView: View {
                             Text("Password")
                                 .opacity(0.4)
                             
-                            if viewModel.isSecured {
-                                SecureField("", text: $viewModel.user.password)
+                            if isSecured {
+                                SecureField("", text: $password)
                             } else {
-                                TextField("", text: $viewModel.user.password)
+                                TextField("", text: $password)
                             }
                         }
                         
                         Button(action: {
-                            viewModel.isSecured.toggle()
+                            isSecured.toggle()
                         }) {
-                            Image(systemName: viewModel.isSecured ? "eye.slash" : "eye")
+                            Image(systemName: isSecured ? "eye.slash" : "eye")
                                 .accentColor(.gray)
                         }
                     }
@@ -66,8 +71,12 @@ struct LoginView: View {
                 .textInputAutocapitalization(.never)
                 .autocorrectionDisabled(true)
                 
-                Button(action: { viewModel.loginPressed()
-                }) {
+                // TODO: Implement login in AuthViewModel and set up button functionality here
+                Button {
+                    Task {
+                        try await authViewModel.logIn(withEmail: email, password: password)
+                    }
+                } label: {
                     Text("LOGIN")
                         .frame(maxWidth: .infinity, maxHeight: .infinity)  // Button fills the cutom shape
                         .bold()
@@ -113,4 +122,5 @@ struct LoginView: View {
 
 #Preview {
     LoginView()
+        .environment(AuthViewModel())
 }

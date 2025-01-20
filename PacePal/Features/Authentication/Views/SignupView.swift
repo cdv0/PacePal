@@ -8,8 +8,13 @@
 import SwiftUI
 
 struct SignupView: View {
-    @State private var viewModel = LoginViewModel()
-
+    @State private var email = ""
+    @State private var fullName = ""
+    @State private var password = ""
+    @State private var confirmPassword = ""
+    
+    @Environment(AuthViewModel.self) private var authViewModel
+    
     var body: some View {
         VStack (spacing: 15) {
             
@@ -23,7 +28,7 @@ struct SignupView: View {
             VStack (alignment: .leading) {
                 Text("Email Address")
                     .opacity(0.4)
-                TextField("", text: $viewModel.user.email)
+                TextField("", text: $email)
             }
                 .customTextFieldShape(color: .gray.opacity(0.11))
                 .textInputAutocapitalization(.never)
@@ -32,7 +37,7 @@ struct SignupView: View {
             VStack (alignment: .leading) {
                 Text("Full Name")
                     .opacity(0.4)
-                TextField("", text: $viewModel.user.fullName)
+                TextField("", text: $fullName)
             }
             .customTextFieldShape(color: .gray.opacity(0.11))
 
@@ -40,7 +45,7 @@ struct SignupView: View {
             VStack (alignment: .leading) {
                 Text("Password")
                     .opacity(0.4)
-                SecureField("", text: $viewModel.user.password)
+                SecureField("", text: $password)
             }
             .customTextFieldShape(color: .gray.opacity(0.11))
             .textInputAutocapitalization(.never)
@@ -50,7 +55,7 @@ struct SignupView: View {
             VStack (alignment: .leading) {
                 Text("Confirm Password")
                     .opacity(0.4)
-                SecureField("", text: $viewModel.user.confirmPassword)
+                SecureField("", text: $confirmPassword)
             }
             .customTextFieldShape(color: .gray.opacity(0.11))
             .textInputAutocapitalization(.never)
@@ -58,8 +63,12 @@ struct SignupView: View {
             .padding(.horizontal, 30)
             .padding(.bottom, 25)
             
-            Button(action: { viewModel.loginPressed()
-            }) {
+            // TODO: Finish SignUp Button
+            Button {
+                Task {
+                    try await authViewModel.createUser(withEmail: email, password: password, confirmPassword: confirmPassword, fullName: fullName)
+                }
+            } label: {
                 Text("SIGN UP")
                     .frame(maxWidth: .infinity, maxHeight: .infinity)  // Button fills the cutom shape
                     .bold()
@@ -79,4 +88,5 @@ struct SignupView: View {
 
 #Preview {
     SignupView()
+        .environment(AuthViewModel())
 }
