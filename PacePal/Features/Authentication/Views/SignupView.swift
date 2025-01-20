@@ -77,6 +77,19 @@ struct SignupView: View {
             
             Spacer()
             Spacer()
+            
+            Button {
+                dismiss()
+            } label: {
+                HStack(spacing: 3) {
+                    Text("Already have an account?")
+                        .foregroundStyle(.black.opacity(0.7))
+                    Text("Sign in")
+                        .fontWeight(.bold)
+                        .foregroundStyle(Color(hex: 0x53A57D))                }
+            }
+            .font(.system(size: 15))
+            .fontWeight(.medium)
     }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color(hex: 0xFBF7F4))

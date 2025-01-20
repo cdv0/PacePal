@@ -18,6 +18,7 @@ struct ContentView: View {
                 LoginView()
             }
         }
+        .preferredColorScheme(.light)
     }
 }
 
