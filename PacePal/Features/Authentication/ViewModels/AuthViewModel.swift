@@ -62,6 +62,14 @@ class AuthViewModel: ObservableObject {
 
     }
     
+    func sendPasswordReset(withEmail email: String) async throws {
+        do {
+            try await Auth.auth().sendPasswordReset(withEmail: email)
+        } catch {
+            print("DEBUG: Failed to send password reset with error \(error.localizedDescription)")
+        }
+    }
+    
     func fetchUser() async {
         guard let uid = Auth.auth().currentUser?.uid else { return }  // Get the current user's id
         guard let snapshot = try? await Firestore.firestore().collection("users").document(uid).getDocument() else { return }// Do not care much about handling error here since things typically work here
