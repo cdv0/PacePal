@@ -36,7 +36,7 @@ struct ForgotPasswordView: View {
             
             Button {
                 Task {
-                    // TODO: Replace with reset link action
+                    try await authViewModel.sendPasswordReset(withEmail: email)
                 }
             } label: {
                 Text("SEND RESET LINK")
