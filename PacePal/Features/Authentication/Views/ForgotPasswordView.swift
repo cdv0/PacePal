@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ForgotPasswordView: View {
     @State var email = ""
+    @FocusState private var isFocused: Bool
     @EnvironmentObject private var authViewModel: AuthViewModel
 
     var body: some View {
@@ -30,6 +31,7 @@ struct ForgotPasswordView: View {
                     Text("Email Address")
                         .opacity(0.4)
                     TextField("", text: $email)
+                        .focused($isFocused)
                 }
                 .customTextFieldShape(color: .gray.opacity(0.11))
             }
@@ -41,6 +43,7 @@ struct ForgotPasswordView: View {
             // SEND RESET LINK BUTTON
             
             Button {
+                isFocused = false
                 Task {
                     try await authViewModel.sendPasswordReset(withEmail: email)
                 }
