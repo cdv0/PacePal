@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct SignupView: View {
-    @State private var email = ""
-    @State private var fullName = ""
-    @State private var password = ""
-    @State private var confirmPassword = ""
+    @State var email = ""
+    @State var fullName = ""
+    @State var password = ""
+    @State var confirmPassword = ""
     @Environment(\.dismiss) var dismiss
     @EnvironmentObject private var authViewModel: AuthViewModel
     
