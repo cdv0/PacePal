@@ -66,7 +66,7 @@ struct SignupView: View {
             // TODO: Finish SignUp Button
             Button {
                 Task {
-                    try await authViewModel.createUser(withEmail: email, password: password, confirmPassword: confirmPassword, fullName: fullName)
+                    try await authViewModel.createUser(withEmail: email, password: password, fullName: fullName)
                 }
             } label: {
                 Text("SIGN UP")
