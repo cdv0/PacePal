@@ -19,6 +19,7 @@ struct SignupView: View {
         VStack (spacing: 15) {
             
             Spacer()
+            Spacer()
             
             Image("PacePalLogo")
                 .resizable()
@@ -112,6 +113,8 @@ struct SignupView: View {
             }
             .font(.system(size: 15))
             .fontWeight(.medium)
+            
+            Spacer()
     }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color(hex: 0xFBF7F4))

@@ -23,7 +23,7 @@ struct ForgotPasswordView: View {
             
             VStack(spacing: 15) {
                 VStack (alignment: .leading) {
-                    Text("Email")
+                    Text("Email Address")
                         .opacity(0.4)
                     TextField("", text: $email)
                 }
