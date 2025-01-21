@@ -21,10 +21,14 @@ struct SignupView: View {
             Spacer()
             Spacer()
             
+            // LOGO
+            
             Image("PacePalLogo")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 350, height: 100)
+            
+            // EMAIL ADDRESS TEXT FIELD
                 
             VStack (alignment: .leading) {
                 Text("Email Address")
@@ -35,14 +39,17 @@ struct SignupView: View {
                 .textInputAutocapitalization(.never)
                 .autocorrectionDisabled(true)
             
+            // FULL NAME TEXT FIELD
+            
             VStack (alignment: .leading) {
                 Text("Full Name")
                     .opacity(0.4)
                 TextField("", text: $fullName)
             }
             .customTextFieldShape(color: .gray.opacity(0.11))
-
             
+            // PASSWORD TEXT FIELD
+
             VStack (alignment: .leading) {
                 Text("Password")
                     .opacity(0.4)
@@ -51,7 +58,8 @@ struct SignupView: View {
             .customTextFieldShape(color: .gray.opacity(0.11))
             .textInputAutocapitalization(.never)
             .autocorrectionDisabled(true)
-
+            
+            // CONFIRM PASSWORD TEXT FIELD
             
             ZStack {
                 VStack (alignment: .leading) {
@@ -82,7 +90,8 @@ struct SignupView: View {
             .padding(.horizontal, 30)
             .padding(.bottom, 25)
             
-            // TODO: Finish SignUp Button
+            // SIGNUP BUTTON
+            
             Button {
                 Task {
                     try await authViewModel.createUser(withEmail: email, password: password, fullName: fullName)
@@ -99,6 +108,8 @@ struct SignupView: View {
             
             Spacer()
             Spacer()
+            
+            // SIGN IN BUTTON
             
             Button {
                 dismiss()

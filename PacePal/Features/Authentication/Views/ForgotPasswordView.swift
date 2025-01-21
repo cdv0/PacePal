@@ -16,10 +16,14 @@ struct ForgotPasswordView: View {
             
             Spacer()
             
+            // LOGO
+            
             Image("PacePalLogo")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 350, height: 100)
+            
+            // EMAIL ADDRESS TEXT FIELD
             
             VStack(spacing: 15) {
                 VStack (alignment: .leading) {
@@ -33,6 +37,8 @@ struct ForgotPasswordView: View {
             .padding(.bottom, 25)
             .textInputAutocapitalization(.never)
             .autocorrectionDisabled(true)
+            
+            // SEND RESET LINK BUTTON
             
             Button {
                 Task {

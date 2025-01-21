@@ -70,7 +70,8 @@ struct LoginView: View {
                 .textInputAutocapitalization(.never)
                 .autocorrectionDisabled(true)
                 
-                // TODO: Implement login in AuthViewModel and set up button functionality here
+                // LOGIN BUTTON
+
                 Button {
                     Task {
                         try await authViewModel.logIn(withEmail: email, password: password)
