@@ -8,7 +8,55 @@
 import SwiftUI
 
 struct ForgotPasswordView: View {
+    @State var email = ""
+    @EnvironmentObject private var authViewModel: AuthViewModel
+
     var body: some View {
-        Text("Filler")
+        VStack {
+            
+            Spacer()
+            
+            Image("PacePalLogo")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 350, height: 100)
+            
+            VStack(spacing: 15) {
+                VStack (alignment: .leading) {
+                    Text("Email")
+                        .opacity(0.4)
+                    TextField("", text: $email)
+                }
+                .customTextFieldShape(color: .gray.opacity(0.11))
+            }
+            .padding(.horizontal, 30)
+            .padding(.bottom, 25)
+            .textInputAutocapitalization(.never)
+            .autocorrectionDisabled(true)
+            
+            Button {
+                Task {
+                    // TODO: Replace with reset link action
+                }
+            } label: {
+                Text("SEND RESET LINK")
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)  // Button fills the cutom shape
+                    .bold()
+                    .foregroundStyle(.white)
+            }
+            .customTextFieldShape(color: Color(hex: 0x53A57D))
+            .disabled(!formIsValid)
+            .opacity(formIsValid ? 1.0 : 0.5)
+            
+            Spacer()
+            Spacer()
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(Color(hex: 0xFBF7F4))
+        .ignoresSafeArea()
     }
+}
+
+#Preview {
+    ForgotPasswordView()
 }
