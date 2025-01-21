@@ -9,6 +9,8 @@ import SwiftUI
 
 struct ProfileView: View {
     // TODO: Modify UI to complement app theme
+    @State private var password = ""
+    @State private var showPasswordAlert = false
     @EnvironmentObject var authViewModel: AuthViewModel
     
     var body: some View {
@@ -59,12 +61,21 @@ struct ProfileView: View {
                     }
                     
                     Button {
-                        // TODO: Implement logic
-                        print("Delete Account")
+                        showPasswordAlert = true
                     } label: {
                         SettingsRowView(imageName: "xmark.circle.fill", title: "Delete Account", tintColor: Color.red)
                     }
-                    
+                    .alert("Enter your password", isPresented: $showPasswordAlert) {
+                        SecureField("Password", text: $password)
+                        Button("Cancel", role: .cancel) {}
+                        Button("Delete Account", role: .destructive) {
+                            Task {
+                                await authViewModel.deleteAccount(withEmail: user.email, password: password)
+                            }
+                        }
+                    } message: {
+                        Text("Please confirm your password to delete your account.")
+                    }
                 }
             }
         }
