@@ -82,6 +82,8 @@ struct LoginView: View {
                         .foregroundStyle(.white)
                 }
                 .customTextFieldShape(color: Color(hex: 0x53A57D))
+                .disabled(!formIsValid)
+                .opacity(formIsValid ? 1.0 : 0.5)
                 
                 NavigationLink(destination: ForgotPasswordView()) {
                     Text("Forgot password?")

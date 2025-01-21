@@ -75,6 +75,8 @@ struct SignupView: View {
                     .foregroundStyle(.white)
             }
                 .customTextFieldShape(color: Color(hex: 0x53A57D))
+                .disabled(!formIsValid)
+                .opacity(formIsValid ? 1.0 : 0.5)
             
             Spacer()
             Spacer()
