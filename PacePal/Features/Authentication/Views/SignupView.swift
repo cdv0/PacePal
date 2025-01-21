@@ -52,10 +52,28 @@ struct SignupView: View {
             .autocorrectionDisabled(true)
 
             
-            VStack (alignment: .leading) {
-                Text("Confirm Password")
-                    .opacity(0.4)
-                SecureField("", text: $confirmPassword)
+            ZStack {
+                VStack (alignment: .leading) {
+                    Text("Confirm Password")
+                        .opacity(0.4)
+                    HStack {
+                        SecureField("", text: $confirmPassword)
+                        
+                        if !password.isEmpty && !confirmPassword.isEmpty {
+                            if password == confirmPassword {
+                                Image(systemName: "checkmark.circle.fill")
+                                    .imageScale(.large)
+                                    .fontWeight(.bold)
+                                    .foregroundColor(Color(.systemGreen))
+                            } else {
+                                Image(systemName: "xmark.circle.fill")
+                                    .imageScale(.large)
+                                    .fontWeight(.bold)
+                                    .foregroundColor(Color(.systemRed))
+                            }
+                        }
+                    }
+                }
             }
             .customTextFieldShape(color: .gray.opacity(0.11))
             .textInputAutocapitalization(.never)
