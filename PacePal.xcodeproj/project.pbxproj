@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8B54EB772D3F099B0013EFD1 /* AuthenticationFormExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B54EB762D3F099B0013EFD1 /* AuthenticationFormExtension.swift */; };
 		8B682B0F2D3AF6C100A5AC34 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B682B0E2D3AF6C100A5AC34 /* LoginView.swift */; };
-		8B682B192D3B01B000A5AC34 /* LoginPageExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B682B182D3B01B000A5AC34 /* LoginPageExtensions.swift */; };
+		8B682B192D3B01B000A5AC34 /* TextFieldShapeExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B682B182D3B01B000A5AC34 /* TextFieldShapeExtension.swift */; };
 		8B682B1B2D3B05E500A5AC34 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B682B1A2D3B05E500A5AC34 /* ColorExtension.swift */; };
 		8B682B1D2D3B12F000A5AC34 /* ForgotPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B682B1C2D3B12F000A5AC34 /* ForgotPasswordView.swift */; };
 		8B682B232D3B32BB00A5AC34 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8B682B222D3B32BB00A5AC34 /* GoogleService-Info.plist */; };
@@ -29,8 +30,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8B54EB762D3F099B0013EFD1 /* AuthenticationFormExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationFormExtension.swift; sourceTree = "<group>"; };
 		8B682B0E2D3AF6C100A5AC34 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
-		8B682B182D3B01B000A5AC34 /* LoginPageExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPageExtensions.swift; sourceTree = "<group>"; };
+		8B682B182D3B01B000A5AC34 /* TextFieldShapeExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldShapeExtension.swift; sourceTree = "<group>"; };
 		8B682B1A2D3B05E500A5AC34 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		8B682B1C2D3B12F000A5AC34 /* ForgotPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordView.swift; sourceTree = "<group>"; };
 		8B682B222D3B32BB00A5AC34 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -65,6 +67,7 @@
 		8B682B092D3AF41D00A5AC34 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				8B7040AC2D3E265B007E4BDB /* Root */,
 				8B7040A92D3E0384007E4BDB /* Profile */,
 				8B682B0A2D3AF42500A5AC34 /* Authentication */,
 			);
@@ -118,8 +121,9 @@
 		8B682B172D3B014E00A5AC34 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				8B682B182D3B01B000A5AC34 /* LoginPageExtensions.swift */,
+				8B682B182D3B01B000A5AC34 /* TextFieldShapeExtension.swift */,
 				8B682B1A2D3B05E500A5AC34 /* ColorExtension.swift */,
+				8B54EB762D3F099B0013EFD1 /* AuthenticationFormExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -147,7 +151,6 @@
 				8B682B162D3B014700A5AC34 /* Utilities */,
 				8B682B092D3AF41D00A5AC34 /* Features */,
 				8B682B222D3B32BB00A5AC34 /* GoogleService-Info.plist */,
-				8B6AF1052D348F3A00BB31B9 /* ContentView.swift */,
 				8B6AF1072D348F3B00BB31B9 /* Assets.xcassets */,
 				8B6AF1092D348F3B00BB31B9 /* Preview Content */,
 			);
@@ -185,6 +188,14 @@
 				8B6AF1032D348F3A00BB31B9 /* PacePalApp.swift */,
 			);
 			path = App;
+			sourceTree = "<group>";
+		};
+		8B7040AC2D3E265B007E4BDB /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				8B6AF1052D348F3A00BB31B9 /* ContentView.swift */,
+			);
+			path = Root;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -273,12 +284,13 @@
 				8B6AF1062D348F3A00BB31B9 /* ContentView.swift in Sources */,
 				8B6CB3312D3CCE750090BC23 /* SignupView.swift in Sources */,
 				8B682B1B2D3B05E500A5AC34 /* ColorExtension.swift in Sources */,
-				8B682B192D3B01B000A5AC34 /* LoginPageExtensions.swift in Sources */,
+				8B682B192D3B01B000A5AC34 /* TextFieldShapeExtension.swift in Sources */,
 				8B70409E2D3DF50D007E4BDB /* SettingsRowView.swift in Sources */,
 				8B6CB32F2D3CCE180090BC23 /* UserModel.swift in Sources */,
 				8B70409C2D3DECDF007E4BDB /* ProfileView.swift in Sources */,
 				8B7040A42D3DFD2A007E4BDB /* AuthViewModel.swift in Sources */,
 				8B6AF1042D348F3A00BB31B9 /* PacePalApp.swift in Sources */,
+				8B54EB772D3F099B0013EFD1 /* AuthenticationFormExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
