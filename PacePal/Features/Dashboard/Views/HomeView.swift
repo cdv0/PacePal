@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct HomeView: View {    
+    @StateObject private var healthViewModel = HealthViewModel()
+    
     let columns = [
         GridItem(.flexible()),
         GridItem(.flexible()),
@@ -23,7 +25,7 @@ struct HomeView: View {
                 Spacer()
                 
                 // STEP COUNT
-                Text("7,234")
+                Text("\(healthViewModel.steps.count)")
                     .font(.system(size: 53))
                     .fontWeight(.bold)
 
@@ -42,7 +44,7 @@ struct HomeView: View {
                                                 height: UIScreen.main.bounds.height * 0.1)
                                 
                             VStack(spacing: 5) {
-                                Text("1.0") // TODO
+                                Text(String(format: "%.2f", healthViewModel.distance.count)) // TODO
                                 Text("Miles")
                                     .foregroundStyle(.secondary)
                                     .font(.system(size: 16))
@@ -58,7 +60,7 @@ struct HomeView: View {
                                                 height: UIScreen.main.bounds.height * 0.1)
                             
                             VStack(spacing: 5) {
-                                Text("210") // TODO
+                                Text("\(healthViewModel.calories.count)")
                                 Text("Calories")
                                     .foregroundStyle(.secondary)
                                     .font(.system(size: 16))
@@ -74,8 +76,8 @@ struct HomeView: View {
                                                 height: UIScreen.main.bounds.height * 0.1)
                             
                             VStack(spacing: 5) {
-                                Text("0h 17m") // TODO
-                                Text("Active Time")
+                                Text(healthViewModel.activeTime.formatted)
+                                Text("Exercise Time")
                                     .foregroundStyle(.secondary)
                                     .font(.system(size: 16))
                             }
@@ -101,6 +103,16 @@ struct HomeView: View {
                 Spacer()
             }
             .background(Color(hex: 0xFBF7F4))
+            .task {
+                do {
+                    try await healthViewModel.fetchSteps(from: .startOfDay, to: .endOfDay, interval: DateComponents(day: 1))
+                    try await healthViewModel.fetchCalories(from: .startOfDay, to: .endOfDay, interval: DateComponents(day: 1))
+                    try await healthViewModel.fetchDistance(from: .startOfDay, to: .endOfDay, interval: DateComponents(day: 1))
+                    try await healthViewModel.fetchActiveTime(from: .startOfDay, to: .endOfDay, interval: DateComponents(day: 1))
+                } catch {
+                    print("DEBUG: Failed to fetch today's health data with error \(error.localizedDescription)")
+                }
+            }
         }
     }
 }
