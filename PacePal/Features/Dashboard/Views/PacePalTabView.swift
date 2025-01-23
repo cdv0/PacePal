@@ -8,11 +8,33 @@
 import SwiftUI
 
 struct PacePalTabView: View {
+    @EnvironmentObject var healthViewModel: HealthViewModel
+    @State var selectedTab = "Home"
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        TabView(selection: $selectedTab) {
+            HomeView()
+                .tag("Home")
+                .tabItem { // Create a tabitem to add a tab icon
+                    Image(systemName: "house")
+                }
+            
+//            ReportView()
+//                .tag("Report")
+//                .tabItem {
+//                    Image(systemName: "chart.bar.fill")
+//                }
+//
+            ProfileView()
+                .tag("Profile")
+                .tabItem {
+                    Image(systemName: "person")
+                }
+        }
     }
 }
 
 #Preview {
     PacePalTabView()
+        .environmentObject(AuthViewModel())
 }
