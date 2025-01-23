@@ -13,7 +13,7 @@ struct ContentView: View {
     var body: some View {
         Group {
             if authViewModel.userSession != nil {
-                ProfileView()
+                PacePalTabView()
             } else {
                 LoginView()
             }
