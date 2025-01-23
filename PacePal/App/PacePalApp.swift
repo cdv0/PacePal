@@ -11,6 +11,7 @@ import Firebase
 @main
 struct PacePalApp: App {
     @StateObject private var authViewModel = AuthViewModel()
+    @StateObject private var healthViewModel = HealthViewModel()
     
     init() {
         FirebaseApp.configure()
@@ -20,6 +21,7 @@ struct PacePalApp: App {
         WindowGroup {
             ContentView()
                 .environmentObject(authViewModel)
+                .environmentObject(healthViewModel)
         }
     }
 }
