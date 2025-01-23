@@ -8,12 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		8B54EB772D3F099B0013EFD1 /* AuthenticationFormExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B54EB762D3F099B0013EFD1 /* AuthenticationFormExtension.swift */; };
+		8B6366032D419A2000CABE7E /* PacePalTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6366022D419A2000CABE7E /* PacePalTabView.swift */; };
+		8B6366072D419FAC00CABE7E /* HealthModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6366062D419FAC00CABE7E /* HealthModel.swift */; };
+		8B6366092D419FBC00CABE7E /* HealthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6366082D419FBC00CABE7E /* HealthViewModel.swift */; };
+		8B63660D2D41B2F900CABE7E /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B63660C2D41B2F900CABE7E /* DateExtension.swift */; };
 		8B682B0F2D3AF6C100A5AC34 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B682B0E2D3AF6C100A5AC34 /* LoginView.swift */; };
-		8B682B192D3B01B000A5AC34 /* TextFieldShapeExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B682B182D3B01B000A5AC34 /* TextFieldShapeExtension.swift */; };
+		8B682B192D3B01B000A5AC34 /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B682B182D3B01B000A5AC34 /* ViewExtension.swift */; };
 		8B682B1B2D3B05E500A5AC34 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B682B1A2D3B05E500A5AC34 /* ColorExtension.swift */; };
 		8B682B1D2D3B12F000A5AC34 /* ForgotPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B682B1C2D3B12F000A5AC34 /* ForgotPasswordView.swift */; };
 		8B682B232D3B32BB00A5AC34 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8B682B222D3B32BB00A5AC34 /* GoogleService-Info.plist */; };
 		8B682B262D3B341B00A5AC34 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 8B682B252D3B341B00A5AC34 /* FirebaseAnalytics */; };
+		8B68FE812D3F69B0002978DC /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B68FE802D3F69B0002978DC /* HomeView.swift */; };
 		8B6AF1042D348F3A00BB31B9 /* PacePalApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6AF1032D348F3A00BB31B9 /* PacePalApp.swift */; };
 		8B6AF1062D348F3A00BB31B9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6AF1052D348F3A00BB31B9 /* ContentView.swift */; };
 		8B6AF1082D348F3B00BB31B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B6AF1072D348F3B00BB31B9 /* Assets.xcassets */; };
@@ -31,11 +36,18 @@
 
 /* Begin PBXFileReference section */
 		8B54EB762D3F099B0013EFD1 /* AuthenticationFormExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationFormExtension.swift; sourceTree = "<group>"; };
+		8B6366022D419A2000CABE7E /* PacePalTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PacePalTabView.swift; sourceTree = "<group>"; };
+		8B6366062D419FAC00CABE7E /* HealthModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthModel.swift; sourceTree = "<group>"; };
+		8B6366082D419FBC00CABE7E /* HealthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthViewModel.swift; sourceTree = "<group>"; };
+		8B63660A2D41A08B00CABE7E /* PacePal.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PacePal.entitlements; sourceTree = "<group>"; };
+		8B63660B2D41AF4500CABE7E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		8B63660C2D41B2F900CABE7E /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		8B682B0E2D3AF6C100A5AC34 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
-		8B682B182D3B01B000A5AC34 /* TextFieldShapeExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldShapeExtension.swift; sourceTree = "<group>"; };
+		8B682B182D3B01B000A5AC34 /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
 		8B682B1A2D3B05E500A5AC34 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		8B682B1C2D3B12F000A5AC34 /* ForgotPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordView.swift; sourceTree = "<group>"; };
 		8B682B222D3B32BB00A5AC34 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		8B68FE802D3F69B0002978DC /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		8B6AF1002D348F3A00BB31B9 /* PacePal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PacePal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B6AF1032D348F3A00BB31B9 /* PacePalApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PacePalApp.swift; sourceTree = "<group>"; };
 		8B6AF1052D348F3A00BB31B9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -64,9 +76,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8B6366042D419F8100CABE7E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				8B6366062D419FAC00CABE7E /* HealthModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		8B6366052D419F9900CABE7E /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				8B6366082D419FBC00CABE7E /* HealthViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		8B682B092D3AF41D00A5AC34 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				8B68FE7E2D3F6966002978DC /* Dashboard */,
 				8B7040AC2D3E265B007E4BDB /* Root */,
 				8B7040A92D3E0384007E4BDB /* Profile */,
 				8B682B0A2D3AF42500A5AC34 /* Authentication */,
@@ -121,11 +150,31 @@
 		8B682B172D3B014E00A5AC34 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				8B682B182D3B01B000A5AC34 /* TextFieldShapeExtension.swift */,
+				8B682B182D3B01B000A5AC34 /* ViewExtension.swift */,
 				8B682B1A2D3B05E500A5AC34 /* ColorExtension.swift */,
 				8B54EB762D3F099B0013EFD1 /* AuthenticationFormExtension.swift */,
+				8B63660C2D41B2F900CABE7E /* DateExtension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		8B68FE7E2D3F6966002978DC /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				8B6366052D419F9900CABE7E /* ViewModels */,
+				8B6366042D419F8100CABE7E /* Models */,
+				8B68FE7F2D3F696F002978DC /* Views */,
+			);
+			path = Dashboard;
+			sourceTree = "<group>";
+		};
+		8B68FE7F2D3F696F002978DC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8B68FE802D3F69B0002978DC /* HomeView.swift */,
+				8B6366022D419A2000CABE7E /* PacePalTabView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		8B6AF0F72D348F3A00BB31B9 = {
@@ -147,6 +196,8 @@
 		8B6AF1022D348F3A00BB31B9 /* PacePal */ = {
 			isa = PBXGroup;
 			children = (
+				8B63660B2D41AF4500CABE7E /* Info.plist */,
+				8B63660A2D41A08B00CABE7E /* PacePal.entitlements */,
 				8B7040AB2D3E0CED007E4BDB /* App */,
 				8B682B162D3B014700A5AC34 /* Utilities */,
 				8B682B092D3AF41D00A5AC34 /* Features */,
@@ -280,11 +331,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				8B682B1D2D3B12F000A5AC34 /* ForgotPasswordView.swift in Sources */,
+				8B63660D2D41B2F900CABE7E /* DateExtension.swift in Sources */,
 				8B682B0F2D3AF6C100A5AC34 /* LoginView.swift in Sources */,
+				8B6366092D419FBC00CABE7E /* HealthViewModel.swift in Sources */,
+				8B68FE812D3F69B0002978DC /* HomeView.swift in Sources */,
 				8B6AF1062D348F3A00BB31B9 /* ContentView.swift in Sources */,
+				8B6366072D419FAC00CABE7E /* HealthModel.swift in Sources */,
 				8B6CB3312D3CCE750090BC23 /* SignupView.swift in Sources */,
 				8B682B1B2D3B05E500A5AC34 /* ColorExtension.swift in Sources */,
-				8B682B192D3B01B000A5AC34 /* TextFieldShapeExtension.swift in Sources */,
+				8B682B192D3B01B000A5AC34 /* ViewExtension.swift in Sources */,
+				8B6366032D419A2000CABE7E /* PacePalTabView.swift in Sources */,
 				8B70409E2D3DF50D007E4BDB /* SettingsRowView.swift in Sources */,
 				8B6CB32F2D3CCE180090BC23 /* UserModel.swift in Sources */,
 				8B70409C2D3DECDF007E4BDB /* ProfileView.swift in Sources */,
@@ -421,12 +477,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = PacePal/PacePal.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"PacePal/Preview Content\"";
 				DEVELOPMENT_TEAM = UZ64X2MHQC;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PacePal/Info.plist;
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "Please allow access to enjoy all the features of our application";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -450,12 +509,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = PacePal/PacePal.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"PacePal/Preview Content\"";
 				DEVELOPMENT_TEAM = UZ64X2MHQC;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PacePal/Info.plist;
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "Please allow access to enjoy all the features of our application";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
