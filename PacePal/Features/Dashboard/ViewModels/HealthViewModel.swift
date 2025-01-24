@@ -9,7 +9,7 @@ import Foundation
 import HealthKit
 
 class HealthViewModel: ObservableObject {
-    @Published var steps: Steps = Steps(count: 0, date: Date())
+    @Published var steps: [Steps] = []
     @Published var calories: Calories = Calories(count: 0, date: Date())
     @Published var distance: Distance = Distance(count: 0, date: Date())
     @Published var activeTime: ActiveTime = ActiveTime(seconds: 0, date: Date())
@@ -51,12 +51,13 @@ class HealthViewModel: ObservableObject {
                                                                intervalComponents: interval)
         let stepsCount = try await stepsQuery.result(for: healthStore) // Fetches the steps
         
+        steps.removeAll()
         stepsCount.enumerateStatistics(from: startDate, to: endDate) { statistics, _ in
             let count = statistics.sumQuantity()?.doubleValue(for: .count()) ?? 0
             let step = Steps(count: Int(count), date: statistics.startDate) // Use the interval's start date for each result
             
             DispatchQueue.main.async { // Ensures the UI is updated on the main thread
-                self.steps = step
+                self.steps.append(step)
             }
         }
     }

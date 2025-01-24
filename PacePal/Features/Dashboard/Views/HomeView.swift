@@ -24,8 +24,8 @@ struct HomeView: View {
                 
                 Spacer()
                 
-                // STEP COUNT
-                Text("\(healthViewModel.steps.count)")
+                // MARK: STEP COUNT
+                Text("\(healthViewModel.steps.reduce(0) { $0 + $1.count })")
                     .font(.system(size: 53))
                     .fontWeight(.bold)
 
