@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct HomeView: View {    
-    @StateObject private var healthViewModel = HealthViewModel()
-    
+    @EnvironmentObject var healthViewModel: HealthViewModel
+
     let columns = [
         GridItem(.flexible()),
         GridItem(.flexible()),
