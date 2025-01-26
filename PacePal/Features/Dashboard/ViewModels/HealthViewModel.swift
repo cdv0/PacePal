@@ -38,11 +38,11 @@ class HealthViewModel: ObservableObject {
         }
     }
     
-    func fetchStepsForLastNDays(_ numberOfDays: Int) async throws {
-        let startDate = Calendar.current.date(byAdding: .day, value: -numberOfDays, to: Date())!
-        
+    func fetchStepsForLastNDays(numberOfDays: Int, interval: DateComponents) async throws {
+        let startDate = Calendar.current.startOfDay(for: Calendar.current.date(byAdding: .day, value: -numberOfDays + 1, to: Date())!) // Add 1 to value to have the current day be value 1
+        let endDate = Calendar.current.date(bySettingHour: 23, minute: 59, second: 59, of: Date())! // 11:59:59 PM
         do {
-            try await fetchSteps(from: startDate, to: Date(), interval: DateComponents(day: 1))
+            try await fetchSteps(from: startDate, to: endDate, interval: interval)
         } catch {
             print("DEBUG: Failed to fetch steps for the last \(numberOfDays) days with error \(error.localizedDescription)")
         }
