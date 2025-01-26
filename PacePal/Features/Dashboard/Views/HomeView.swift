@@ -108,7 +108,17 @@ struct HomeView: View {
                         .customCardView(width: UIScreen.main.bounds.width * 0.9,
                                         height: UIScreen.main.bounds.height * 0.3)
                     
-                    // TODO: Implement steps graph
+                    if displayType == "chart" {
+                        // TODO: Implement steps graph
+                        StepsChartView()
+                            .frame(height: 290)
+                    } else if displayType == "list" {
+                        StepsListView()
+                            .padding(4)
+                            .frame(height: 290)
+                            .scrollContentBackground(.hidden)
+                            .listStyle(PlainListStyle())
+                    }
                 }
             
                 Spacer()
@@ -116,7 +126,8 @@ struct HomeView: View {
             .background(Color(hex: 0xFBF7F4))
             .task {
                 do {
-                    try await healthViewModel.fetchSteps(from: .startOfDay, to: .endOfDay, interval: DateComponents(day: 1))
+                    // TODO: change parameter to days only
+                    try await healthViewModel.fetchStepsForLastNDays(numberOfDays: 1, interval: DateComponents(day: 1))
                     try await healthViewModel.fetchCalories(from: .startOfDay, to: .endOfDay, interval: DateComponents(day: 1))
                     try await healthViewModel.fetchDistance(from: .startOfDay, to: .endOfDay, interval: DateComponents(day: 1))
                     try await healthViewModel.fetchActiveTime(from: .startOfDay, to: .endOfDay, interval: DateComponents(day: 1))
@@ -130,4 +141,5 @@ struct HomeView: View {
 
 #Preview {
     HomeView()
+        .environmentObject(HealthViewModel())
 }
