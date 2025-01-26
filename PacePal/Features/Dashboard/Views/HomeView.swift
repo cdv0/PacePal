@@ -26,7 +26,7 @@ struct HomeView: View {
                 Spacer()
                 
                 // MARK: STEP COUNT
-                Text("\(healthViewModel.steps.reduce(0) { $0 + $1.count })")
+                Text("\(healthViewModel.steps.first?.count ?? 0)")
                     .font(.system(size: 53))
                     .fontWeight(.bold)
 
@@ -106,7 +106,7 @@ struct HomeView: View {
                     Rectangle()
                         .fill(.white)
                         .customCardView(width: UIScreen.main.bounds.width * 0.9,
-                                        height: UIScreen.main.bounds.height * 0.3)
+                                        height: UIScreen.main.bounds.height * 0.35)
                     
                     if displayType == "chart" {
                         // TODO: Implement steps graph
@@ -120,7 +120,8 @@ struct HomeView: View {
                             .listStyle(PlainListStyle())
                     }
                 }
-            
+                .padding()
+                
                 Spacer()
             }
             .background(Color(hex: 0xFBF7F4))
