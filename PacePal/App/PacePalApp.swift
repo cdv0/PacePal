@@ -20,6 +20,7 @@ struct PacePalApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .preferredColorScheme(.light)
                 .environmentObject(authViewModel)
                 .environmentObject(healthViewModel)
         }
