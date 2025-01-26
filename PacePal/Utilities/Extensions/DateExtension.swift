@@ -8,6 +8,12 @@
 import Foundation
 
 extension Date {
+    
+    static func from(year: Int, month: Int, day: Int) -> Date {
+        let components = DateComponents(year: year, month: month, day: day)
+        return Calendar.current.date(from: components)!
+    }
+    
     static var startOfDay: Date { // Access the type itself rather than making a Date() instance. We do this because the property is not specific to any single Date instance
         Calendar.current.startOfDay(for: Date()) // Returns 00:00:00 of that day
     }

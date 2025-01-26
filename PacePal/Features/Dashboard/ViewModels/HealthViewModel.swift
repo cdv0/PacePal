@@ -38,6 +38,16 @@ class HealthViewModel: ObservableObject {
         }
     }
     
+    func fetchStepsForLastNDays(_ numberOfDays: Int) async throws {
+        let startDate = Calendar.current.date(byAdding: .day, value: -numberOfDays, to: Date())!
+        
+        do {
+            try await fetchSteps(from: startDate, to: Date(), interval: DateComponents(day: 1))
+        } catch {
+            print("DEBUG: Failed to fetch steps for the last \(numberOfDays) days with error \(error.localizedDescription)")
+        }
+    }
+    
     func fetchSteps(from startDate: Date, to endDate: Date, interval: DateComponents) async throws {
         guard let stepsType = HKQuantityType.quantityType(forIdentifier: .stepCount) else { return } // Creates an instance of HKQuantityType and gets the *type* of the data we're querying for
         let predicate = HKQuery.predicateForSamples(withStart: startDate, // Creates a predicate (filter) the health data you're querying for based on certain criteria. .strictStartDate ensures the start date is inclusive.
