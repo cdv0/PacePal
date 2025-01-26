@@ -51,13 +51,17 @@ class HealthViewModel: ObservableObject {
                                                                intervalComponents: interval)
         let stepsCount = try await stepsQuery.result(for: healthStore) // Fetches the steps
         
-        steps.removeAll()
+        // Clear the array once before the loop
+        DispatchQueue.main.async {
+            self.steps = []
+        }
+        
         stepsCount.enumerateStatistics(from: startDate, to: endDate) { statistics, _ in
             let count = statistics.sumQuantity()?.doubleValue(for: .count()) ?? 0
             let step = Steps(count: Int(count), date: statistics.startDate) // Use the interval's start date for each result
             
-            DispatchQueue.main.async { // Ensures the UI is updated on the main thread
-                self.steps.append(step)
+            DispatchQueue.main.async {
+                self.steps.insert(step, at: 0)
             }
         }
     }
