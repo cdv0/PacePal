@@ -9,6 +9,7 @@ import SwiftUI
 
 struct HomeView: View {    
     @EnvironmentObject var healthViewModel: HealthViewModel
+    @State private var displayType = "chart.bar"
 
     let columns = [
         GridItem(.flexible()),
@@ -90,7 +91,17 @@ struct HomeView: View {
                 }
                 .padding([.top, .bottom], 15)
                 
-                // STEPS WALKED GRAPH VIEW
+                // MARK: LIST AND CHART VIEW PICKER
+                Picker("Selection", selection: $displayType) {
+                    Text("Chart")
+                        .tag("chart")
+                    Text("List")
+                        .tag("list")
+                }
+                .pickerStyle(SegmentedPickerStyle())
+                .padding()
+                
+                // MARK: STEPS WALKED GRAPH VIEW
                 ZStack {
                     Rectangle()
                         .fill(.white)
