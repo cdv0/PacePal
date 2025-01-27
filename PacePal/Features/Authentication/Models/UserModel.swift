@@ -16,13 +16,10 @@ struct User: Identifiable, Codable {
     var confirmPassword: String = ""
     
     var initials: String {
-        let formatter = PersonNameComponentsFormatter()
-        if let components = formatter.personNameComponents(from: fullName) {
-            formatter.style = .abbreviated
-            return formatter.string(from: components)
-        }
-        
-        return ""
+        let nameParts = fullName.split(separator: " ")
+        let firstInitial = nameParts.first?.prefix(1).uppercased() ?? ""
+        let lastInitial = nameParts.dropFirst().first?.prefix(1).uppercased() ?? ""
+        return firstInitial + lastInitial
     }
 }
 
