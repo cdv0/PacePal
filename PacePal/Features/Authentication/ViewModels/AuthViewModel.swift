@@ -22,6 +22,31 @@ class AuthViewModel: ObservableObject {
         }
     }
     
+    func updateUser(fullName: String? = nil, email: String? = nil) async throws {
+        guard let user = userSession else { return }
+
+        do {
+            let userID = user.uid
+            var updatedData = [String: Any]()
+            
+            if let fullName = fullName, !fullName.isEmpty, fullName != currentUser?.fullName {
+                updatedData["fullName"] = fullName
+                self.currentUser?.fullName = fullName
+            }
+            
+            if let email = email, !email.isEmpty, email != currentUser?.email {
+                updatedData["email"] = email
+                self.currentUser?.email = email
+            }
+            
+            if !updatedData.isEmpty {
+                try await Firestore.firestore().collection("users").document(userID).updateData(updatedData)
+            }
+        } catch {
+            print("DEBUG: Failed to update user with error \(error.localizedDescription)")
+        }
+    }
+    
     func logIn(withEmail email: String, password: String) async throws {
         do {
             let result = try await Auth.auth().signIn(withEmail: email, password: password)
