@@ -11,7 +11,7 @@ struct LoginView: View {
     @State var email = ""
     @State var password = ""
     
-    @State private var isSecured = false
+    @State private var isSecured = true
     @EnvironmentObject private var authViewModel: AuthViewModel
 
     var body: some View {
