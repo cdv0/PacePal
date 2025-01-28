@@ -13,6 +13,12 @@ struct PacePalTabView: View {
     
     var body: some View {
         TabView(selection: $selectedTab) {
+            ServerView()
+                .tag("Server")
+                .tabItem {
+                    Image(systemName: "figure.2")
+                }
+            
             HomeView()
                 .tag("Home")
                 .tabItem { // Create a tabitem to add a tab icon

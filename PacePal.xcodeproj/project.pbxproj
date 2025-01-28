@@ -37,6 +37,7 @@
 		8B7040A42D3DFD2A007E4BDB /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7040A32D3DFD2A007E4BDB /* AuthViewModel.swift */; };
 		8B7040A62D3DFE88007E4BDB /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 8B7040A52D3DFE88007E4BDB /* FirebaseAuth */; };
 		8B7040A82D3DFE88007E4BDB /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 8B7040A72D3DFE88007E4BDB /* FirebaseDatabase */; };
+		8B70D0432D485B970081D3DF /* ServerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B70D0422D485B970081D3DF /* ServerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +69,7 @@
 		8B70409B2D3DECDF007E4BDB /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		8B70409D2D3DF50D007E4BDB /* SettingsRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRowView.swift; sourceTree = "<group>"; };
 		8B7040A32D3DFD2A007E4BDB /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
+		8B70D0422D485B970081D3DF /* ServerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 		8B682B092D3AF41D00A5AC34 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				8B70D0402D485B6D0081D3DF /* Server */,
 				8B68FE7E2D3F6966002978DC /* Home */,
 				8B7040AC2D3E265B007E4BDB /* Root */,
 				8B7040A92D3E0384007E4BDB /* Profile */,
@@ -264,6 +267,22 @@
 			path = Root;
 			sourceTree = "<group>";
 		};
+		8B70D0402D485B6D0081D3DF /* Server */ = {
+			isa = PBXGroup;
+			children = (
+				8B70D0412D485B8B0081D3DF /* Views */,
+			);
+			path = Server;
+			sourceTree = "<group>";
+		};
+		8B70D0412D485B8B0081D3DF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8B70D0422D485B970081D3DF /* ServerView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -363,6 +382,7 @@
 				8B6366032D419A2000CABE7E /* PacePalTabView.swift in Sources */,
 				8B70409E2D3DF50D007E4BDB /* SettingsRowView.swift in Sources */,
 				8B6CB32F2D3CCE180090BC23 /* UserModel.swift in Sources */,
+				8B70D0432D485B970081D3DF /* ServerView.swift in Sources */,
 				8B70409C2D3DECDF007E4BDB /* ProfileView.swift in Sources */,
 				8B7040A42D3DFD2A007E4BDB /* AuthViewModel.swift in Sources */,
 				8B6AF1042D348F3A00BB31B9 /* PacePalApp.swift in Sources */,
