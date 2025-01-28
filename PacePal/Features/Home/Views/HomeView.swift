@@ -37,7 +37,7 @@ struct HomeView: View {
                 VStack {
                     LazyVGrid(columns: columns) {
                         
-                        // MILES WALKED CARD
+                        // MARK: MILES WALKED CARD
                         ZStack {
                             Rectangle()
                                 .fill(.white)
@@ -45,7 +45,7 @@ struct HomeView: View {
                                                 height: UIScreen.main.bounds.height * 0.1)
                                 
                             VStack(spacing: 5) {
-                                Text(String(format: "%.2f", healthViewModel.distance.count)) // TODO
+                                Text(String(format: "%.2f", healthViewModel.distance.count))
                                 Text("Miles")
                                     .foregroundStyle(.secondary)
                                     .font(.system(size: 16))
@@ -53,7 +53,7 @@ struct HomeView: View {
                         }
                         .padding(4)
                         
-                        // CALORIES BURNED CARD
+                        // MARK: CALORIES BURNED CARD
                         ZStack {
                             Rectangle()
                                 .fill(.white)
@@ -69,7 +69,7 @@ struct HomeView: View {
                         }
                         .padding(4)
 
-                        // ACTIVE TIME CARD
+                        // MARK: ACTIVE TIME CARD
                         ZStack {
                             Rectangle()
                                 .fill(.white)

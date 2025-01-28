@@ -32,7 +32,7 @@ struct ProfileView: View {
                                         .font(.title)
                                         .fontWeight(.semibold)
                                         .foregroundColor(.white)
-                                        .frame(width: 72, height: 72)
+                                        .frame(width: 90, height: 90)
                                         .background(Color(.systemGray3))
                                         .clipShape(Circle())
                                         .overlay(
@@ -55,7 +55,7 @@ struct ProfileView: View {
                                     Button(action: {
                                         editProfileButtonPressed = true
                                     }, label: {
-                                        Text("Edit Profile")
+                                        Text("EDIT PROFILE")
                                             .font(.system(size: 14, weight: .bold))
                                             .foregroundStyle(.white)
                                             .frame(width: 170)

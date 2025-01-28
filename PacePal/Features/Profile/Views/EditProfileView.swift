@@ -17,19 +17,20 @@ struct EditProfileView: View {
     
     var body: some View {
         if let user = authViewModel.currentUser {
-            VStack {
+            VStack(spacing: 20) {
                 // TODO: Implement profile picture
                 Text(user.initials)
                     .font(.title)
                     .fontWeight(.semibold)
                     .foregroundColor(.white)
-                    .frame(width: 72, height: 72)
+                    .frame(width: 90, height: 90)
                     .background(Color(.systemGray3))
                     .clipShape(Circle())
                     .overlay(
                         Circle()
                             .stroke(Color(hex: 0x53A57D),lineWidth: 2)
                     )
+                    .padding(25)
                 
                 // MARK: Name field
                 VStack (alignment: .leading) {
@@ -64,6 +65,10 @@ struct EditProfileView: View {
                         .foregroundStyle(.white)
                 }
                     .customTextFieldShape(color: Color(hex: 0x53A57D))
+                
+                Spacer()
+                Spacer()
+
             }
             .toolbar {
                 ToolbarItem(placement: .principal) {
