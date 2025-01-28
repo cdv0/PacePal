@@ -7,11 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8B4435272D4623AD00B67A6B /* DateFormatterExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4435262D4623AD00B67A6B /* DateFormatterExtension.swift */; };
+		8B4921312D43289800E32D95 /* StepsChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4921302D43289800E32D95 /* StepsChartView.swift */; };
+		8B4921332D4328AC00E32D95 /* StepsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4921322D4328AC00E32D95 /* StepsListView.swift */; };
 		8B54EB772D3F099B0013EFD1 /* AuthenticationFormExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B54EB762D3F099B0013EFD1 /* AuthenticationFormExtension.swift */; };
 		8B6366032D419A2000CABE7E /* PacePalTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6366022D419A2000CABE7E /* PacePalTabView.swift */; };
 		8B6366072D419FAC00CABE7E /* HealthModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6366062D419FAC00CABE7E /* HealthModel.swift */; };
 		8B6366092D419FBC00CABE7E /* HealthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6366082D419FBC00CABE7E /* HealthViewModel.swift */; };
 		8B63660D2D41B2F900CABE7E /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B63660C2D41B2F900CABE7E /* DateExtension.swift */; };
+		8B63660F2D4232E000CABE7E /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B63660E2D4232E000CABE7E /* SettingsView.swift */; };
 		8B682B0F2D3AF6C100A5AC34 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B682B0E2D3AF6C100A5AC34 /* LoginView.swift */; };
 		8B682B192D3B01B000A5AC34 /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B682B182D3B01B000A5AC34 /* ViewExtension.swift */; };
 		8B682B1B2D3B05E500A5AC34 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B682B1A2D3B05E500A5AC34 /* ColorExtension.swift */; };
@@ -19,6 +23,7 @@
 		8B682B232D3B32BB00A5AC34 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8B682B222D3B32BB00A5AC34 /* GoogleService-Info.plist */; };
 		8B682B262D3B341B00A5AC34 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 8B682B252D3B341B00A5AC34 /* FirebaseAnalytics */; };
 		8B68FE812D3F69B0002978DC /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B68FE802D3F69B0002978DC /* HomeView.swift */; };
+		8B6AEFF32D46FA23006BF79E /* EditProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6AEFF22D46FA23006BF79E /* EditProfileView.swift */; };
 		8B6AF1042D348F3A00BB31B9 /* PacePalApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6AF1032D348F3A00BB31B9 /* PacePalApp.swift */; };
 		8B6AF1062D348F3A00BB31B9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6AF1052D348F3A00BB31B9 /* ContentView.swift */; };
 		8B6AF1082D348F3B00BB31B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B6AF1072D348F3B00BB31B9 /* Assets.xcassets */; };
@@ -35,6 +40,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8B4435262D4623AD00B67A6B /* DateFormatterExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatterExtension.swift; sourceTree = "<group>"; };
+		8B4921302D43289800E32D95 /* StepsChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepsChartView.swift; sourceTree = "<group>"; };
+		8B4921322D4328AC00E32D95 /* StepsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepsListView.swift; sourceTree = "<group>"; };
 		8B54EB762D3F099B0013EFD1 /* AuthenticationFormExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationFormExtension.swift; sourceTree = "<group>"; };
 		8B6366022D419A2000CABE7E /* PacePalTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PacePalTabView.swift; sourceTree = "<group>"; };
 		8B6366062D419FAC00CABE7E /* HealthModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthModel.swift; sourceTree = "<group>"; };
@@ -42,12 +50,14 @@
 		8B63660A2D41A08B00CABE7E /* PacePal.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PacePal.entitlements; sourceTree = "<group>"; };
 		8B63660B2D41AF4500CABE7E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		8B63660C2D41B2F900CABE7E /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
+		8B63660E2D4232E000CABE7E /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		8B682B0E2D3AF6C100A5AC34 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		8B682B182D3B01B000A5AC34 /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
 		8B682B1A2D3B05E500A5AC34 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		8B682B1C2D3B12F000A5AC34 /* ForgotPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordView.swift; sourceTree = "<group>"; };
 		8B682B222D3B32BB00A5AC34 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8B68FE802D3F69B0002978DC /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		8B6AEFF22D46FA23006BF79E /* EditProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileView.swift; sourceTree = "<group>"; };
 		8B6AF1002D348F3A00BB31B9 /* PacePal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PacePal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B6AF1032D348F3A00BB31B9 /* PacePalApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PacePalApp.swift; sourceTree = "<group>"; };
 		8B6AF1052D348F3A00BB31B9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -95,7 +105,7 @@
 		8B682B092D3AF41D00A5AC34 /* Features */ = {
 			isa = PBXGroup;
 			children = (
-				8B68FE7E2D3F6966002978DC /* Dashboard */,
+				8B68FE7E2D3F6966002978DC /* Home */,
 				8B7040AC2D3E265B007E4BDB /* Root */,
 				8B7040A92D3E0384007E4BDB /* Profile */,
 				8B682B0A2D3AF42500A5AC34 /* Authentication */,
@@ -154,18 +164,19 @@
 				8B682B1A2D3B05E500A5AC34 /* ColorExtension.swift */,
 				8B54EB762D3F099B0013EFD1 /* AuthenticationFormExtension.swift */,
 				8B63660C2D41B2F900CABE7E /* DateExtension.swift */,
+				8B4435262D4623AD00B67A6B /* DateFormatterExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		8B68FE7E2D3F6966002978DC /* Dashboard */ = {
+		8B68FE7E2D3F6966002978DC /* Home */ = {
 			isa = PBXGroup;
 			children = (
 				8B6366052D419F9900CABE7E /* ViewModels */,
 				8B6366042D419F8100CABE7E /* Models */,
 				8B68FE7F2D3F696F002978DC /* Views */,
 			);
-			path = Dashboard;
+			path = Home;
 			sourceTree = "<group>";
 		};
 		8B68FE7F2D3F696F002978DC /* Views */ = {
@@ -173,6 +184,8 @@
 			children = (
 				8B68FE802D3F69B0002978DC /* HomeView.swift */,
 				8B6366022D419A2000CABE7E /* PacePalTabView.swift */,
+				8B4921302D43289800E32D95 /* StepsChartView.swift */,
+				8B4921322D4328AC00E32D95 /* StepsListView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -229,6 +242,8 @@
 			children = (
 				8B70409D2D3DF50D007E4BDB /* SettingsRowView.swift */,
 				8B70409B2D3DECDF007E4BDB /* ProfileView.swift */,
+				8B63660E2D4232E000CABE7E /* SettingsView.swift */,
+				8B6AEFF22D46FA23006BF79E /* EditProfileView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -333,13 +348,18 @@
 				8B682B1D2D3B12F000A5AC34 /* ForgotPasswordView.swift in Sources */,
 				8B63660D2D41B2F900CABE7E /* DateExtension.swift in Sources */,
 				8B682B0F2D3AF6C100A5AC34 /* LoginView.swift in Sources */,
+				8B63660F2D4232E000CABE7E /* SettingsView.swift in Sources */,
 				8B6366092D419FBC00CABE7E /* HealthViewModel.swift in Sources */,
 				8B68FE812D3F69B0002978DC /* HomeView.swift in Sources */,
 				8B6AF1062D348F3A00BB31B9 /* ContentView.swift in Sources */,
 				8B6366072D419FAC00CABE7E /* HealthModel.swift in Sources */,
 				8B6CB3312D3CCE750090BC23 /* SignupView.swift in Sources */,
 				8B682B1B2D3B05E500A5AC34 /* ColorExtension.swift in Sources */,
+				8B4921312D43289800E32D95 /* StepsChartView.swift in Sources */,
 				8B682B192D3B01B000A5AC34 /* ViewExtension.swift in Sources */,
+				8B4921332D4328AC00E32D95 /* StepsListView.swift in Sources */,
+				8B4435272D4623AD00B67A6B /* DateFormatterExtension.swift in Sources */,
+				8B6AEFF32D46FA23006BF79E /* EditProfileView.swift in Sources */,
 				8B6366032D419A2000CABE7E /* PacePalTabView.swift in Sources */,
 				8B70409E2D3DF50D007E4BDB /* SettingsRowView.swift in Sources */,
 				8B6CB32F2D3CCE180090BC23 /* UserModel.swift in Sources */,
