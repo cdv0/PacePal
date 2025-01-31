@@ -21,7 +21,7 @@ class HealthViewModel: ObservableObject {
             HKQuantityType(.stepCount),
             HKQuantityType(.activeEnergyBurned),
             HKQuantityType(.distanceWalkingRunning),
-
+            HKQuantityType(.appleExerciseTime)
         ]
         
         Task {
